@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="./css/style.css">
+        <title>ノクマンの大冒険</title>
+        <meta name="description" content="すごろく風ゲームで遊びながら瀬戸内海の島について楽しく知ることができるWEBアプリです">
+    </head>
+    <body>
+        <form name="form1">
+            <table border="0" cellspacing="5" cellpadding="5" id="player">
+                <tr>
+                    <td><input name="user0" type="text" size="20" value="あなた"></td>
+                    <td><input name="btn0" type="button" value="サイコロ" onclick="getNum(0)"></td>
+                    <td><div id="sai0"></div></td>
+                    <td><div id="brd0"></div></td>
+                </tr>
+                <tr>
+                    <td><input name="user1" type="text" size="20"></td>
+                    <td><input name="btn1" type="button" value="サイコロ" onclick="getNum(1)"></td>
+                    <td><div id="sai1"></div></td>
+                    <td><div id="brd1"></div></td>
+                </tr>
+                <tr>
+                    <td><input name="user2" type="text" size="20"></td>
+                    <td><input name="btn2" type="button" value="サイコロ" onclick="getNum(2)"></td>
+                    <td><div id="sai2"></div></td>
+                    <td><div id="brd2"></div></td>
+                </tr>
+                <tr>
+                    <td><input name="user3" type="text" size="20"></td>
+                    <td><input name="btn3" type="button" value="サイコロ" onclick="getNum(3)"></td>
+                    <td><div id="sai3"></div></td>
+                    <td><div id="brd3"></div></td>
+                </tr>
+            </table>
+        </form>
+
+        <canvas id="game"></canvas>
+
+        
+        <script src="./javascript/test.js"></script>
+    </body>
+</html>

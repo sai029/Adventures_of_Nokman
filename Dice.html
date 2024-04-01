@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>サイコロアプリ</title>
+  <link rel="stylesheet" href="Dice.css">
+</head>
+<body>
+    
+<section class="diceContent">
+    <img id="dice">
+    <button type="button" id="diceBtn">さいころを振る</button>
+</section>
+
+<div class="dice">
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+  </div>
+
+
+<script>
+let diceArry = ['./image/dice1.png',
+  './image/dice2.png',
+  './image/dice3.png',
+  './image/dice4.png',
+  './image/dice5.png',
+  './image/dice6.png'
+  ];  //  画像の配列
+  const dice = document.getElementById("dice");  //  ここに画像を表示
+  const diceBtn = document.getElementById("diceBtn");  //  ボタン
+  dice.src = diceArry[0];  //  最初の画面
+  
+  diceBtn.addEventListener("click", function(){
+  if(diceBtn.textContent=='さいころを振る'){
+  diceBtn.textContent = 'ストップ'  //  ボタンの表示を変える
+  timerId = setInterval( () => {
+  let diceIndex = Math.floor(Math.random() * diceArry.length) ;  
+  dice.src = diceArry[diceIndex];
+  }, 200);   //  ランダム表示
+  }else{
+  diceBtn.textContent = 'さいころを振る';  //  ボタンの表示を変える
+  clearInterval(timerId);   //  ランダム表示の停止
+  }
+  })
+</script>
+
+
+<!-- //3Ddice
+<script>
+  let diceArry = ['../dice_image/dice1.png',
+    '../dice_image/dice2.png',
+    '../dice_image/dice3.png',
+    '../dice_image/dice4.png',
+    '../dice_image/dice5.png',
+    '../dice_image/dice6.png'
+    ];  //  画像の配列
+    const dice1 = document.getElementById("dice");  //  ここに画像を表示
+    const diceBtn1 = document.getElementById("diceBtn");  //  ボタン
+    dice.src = diceArry[0];  //  最初の画面
+    
+    diceBtn1.addEventListener("click", function(){
+      if(diceBtn1.textContent=='さいころを振る'){
+          diceBtn1.textContent = 'ストップ';
+          dice1.style.display = 'none'    // 最初の２Dサイコロ画像を非表示
+          anidice1.style.display = 'block';   //  アニメーション用のサイコロを表示
+          timerId1 = setInterval( () => {   //  隠したサイコロをランダムさせる
+            let diceIndex1 = Math.floor(Math.random() * diceArry1.length) ;  
+            dice1.src = diceArry1[diceIndex1];
+          }, 200);
+      }else{
+          diceBtn1.textContent = 'さいころを振る';
+          clearInterval(timerId1);    //  ランダムを停止
+          anidice1.style.display = 'none'   //  アニメーションしていたサイコロを非表示
+          dice1.style.display = 'block'
+      }
+  })
+  </script>
+  -->
+
+
+</body>
+</html>

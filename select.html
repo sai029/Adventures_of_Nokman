@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="./css/style.css">
+        <title>ノクマンの大冒険</title>
+        <meta name="description" content="すごろく風ゲームで遊びながら瀬戸内海の島について楽しく知ることができるWEBアプリです">
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    </head>
+    <body>
+        <div class="main">
+            <audio preload="auto" id="btn_audio" loop autoplay>
+                <source src="./audio/時計の森.mp3" type="audio/mp3">
+            </audio>
+            <audio preload="auto" id="btn_push">
+              <source src="./audio/ぷよん.mp3" type="audio/mp3">
+            </audio>
+            <div class="background">
+                    <div class="cover"></div>
+                    <img src="image/iland_syodo.png" alt="" id="syodo">
+                </div>
+            <div class="backdrop">
+                <ul class="slider">
+                    <li><p class="yomi">しょうどしま</p><p class="kanzi">小豆島</p><button onclick="location.href='start_select.html'"><img src="image/iland_syodo.png"  class="syodo" alt=""></button></li>
+                    <li><p class="yomi">めぎじま</p><p class="kanzi">女木島</p><button><img src="image/iland_megi.png" alt="" class="megi"></button></li>
+                    <li><p class="yomi">なおしま</p><p class="kanzi">直島</p><button><img src="image/iland_nao.png" alt=""></button></li>
+                    <li><p class="yomi">おぎじま</p><p class="kanzi">男木島</p><button><img src="image/iland_ogi.png" alt="" class="ogi"></button></li>
+                </ul>
+                    <div class="btn">
+                         <!--<button class="n-button" id="next">次へ</button>
+                        ,<button class="t-button" id="back" onclick="history.back()"><div class="arrow_left">もどる</div></button>-->
+                        <button class="t-button" id="back"><div class="arrow_left">もどる</div></button>
+                    </div>
+                    <!--
+                    <div class="cloud">
+                        <img src="image/cloud.png" alt="" id="cloud_01">
+                        <img src="image/cloud.png" alt="" id="cloud_02">
+                        <img src="image/cloud.png" alt="" id="cloud_03">
+                        <img src="image/cloud.png" alt="" id="cloud_04">
+                        <img src="image/cloud.png" alt="" id="cloud_05">
+                        <img src="image/cloud.png" alt="" id="cloud_06">
+                    </div>
+                    -->
+            </div>
+        </div>
+            <!--
+            <div class="reg">
+                <h1 class="reg">プレイヤー登録</h1>
+                <form action="" name="register" id="form1">
+                    <input type="hidden" name="user_member" id="member" value="2">
+                    <input type="hidden" name="user_member" id="member_name" value="2">
+                    <table border="0" id="player">
+                    </table>
+                </form>
+                <button id="clickevent" class="btn-circle">
+                    ＋
+                </button>
+            </div>
+            -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script src="./javascript/stage_select.js"></script>
+
+    </body>
+</html>

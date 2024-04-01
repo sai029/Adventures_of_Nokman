@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <link rel="stylesheet" href="./css/style.css">
+        <title>ノクマンの大冒険</title>
+        <meta name="description" content="すごろく風ゲームで遊びながら瀬戸内海の島について楽しく知ることができるWEBアプリです">
+    </head>
+    <body id="finish">
+        <audio preload="auto" id="btn_push">
+            <source src="./audio/ぷよん.mp3" type="audio/mp3">
+          </audio>
+        <img src="image/iland_syodo.png" alt="" id="syodo">
+        <h1>1位</h1>
+        <div id="winner">
+            <!--優勝プレイヤー名-->
+            <div id="player_name"></div>
+            <!--優勝プレイヤーの駒-->
+            <img id="img" src="">
+            <!--優勝プレイヤーのポイント-->
+            <div id="point"></div>
+        </div>
+
+
+        <img src="./image/finish_cloud.png" alt="雲画像" class="btn_back">
+
+        <div class="share-and-back">
+            <button class="share">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="23" viewbox="0 0 28 23" fill="none">
+                    <path d="M28 2.70588C26.9694 3.17941 25.8585 3.49059 24.7075 3.63941C25.8853 2.92235 26.7954 1.78588 27.2237 0.419412C26.1128 1.09588 24.8815 1.56941 23.5832 1.84C22.5258 0.676471 21.0402 0 19.3537 0C16.2084 0 13.6386 2.59765 13.6386 5.80412C13.6386 6.26412 13.6922 6.71059 13.7859 7.13C9.02103 6.88647 4.7782 4.57294 1.95411 1.06882C1.45889 1.92118 1.17782 2.92235 1.17782 3.97765C1.17782 5.99353 2.18164 7.77941 3.73423 8.79412C2.78394 8.79412 1.90057 8.52353 1.12428 8.11765V8.15823C1.12428 10.9724 3.10516 13.3265 5.72849 13.8541C4.88625 14.0871 4.00204 14.1195 3.14532 13.9488C3.50884 15.1022 4.2208 16.1114 5.18109 16.8346C6.14139 17.5577 7.30175 17.9585 8.49904 17.9806C6.46949 19.6047 3.95372 20.4826 1.3652 20.47C0.910134 20.47 0.455067 20.4429 0 20.3888C2.54302 22.0394 5.56788 23 8.80688 23C19.3537 23 25.1491 14.1518 25.1491 6.48059C25.1491 6.22353 25.1491 5.98 25.1358 5.72294C26.26 4.91118 27.2237 3.88294 28 2.70588Z" fill="white"/>
+                </svg> 
+                <p class="share">けっかをシェアする</p>
+            </button>
+            <button class="TOP">
+                <img src="./image/white_syodo.png" alt="">
+                <p class="TOP">TOPにもどる</p>
+            </button>
+        </div>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="./javascript/finish.js"></script>
+    </body>
+</html>

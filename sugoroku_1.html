@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Monomaniac+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Palette+Mosaic&display=swap" rel="stylesheet">
+        <title>ノクマンの大冒険</title>
+        <meta name="description" content="すごろく風ゲームで遊びながら瀬戸内海の島について楽しく知ることができるWEBアプリです">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+    </head>
+    <body id="sugoroku">
+        <audio preload="auto" id="btn_audio" loop autoplay>
+            <source src="./audio/時計の森.mp3" type="audio/mp3">
+        </audio>
+        <audio preload="auto" id="fail">
+            <source src="./audio/もちゃもちゃ.mp3" type="audio/mp3">
+        </audio>
+        <audio preload="auto" id="btn_push">
+            <source src="./audio/ぷよん.mp3" type="audio/mp3">
+        </audio>
+        <audio preload="auto" id="success">
+            <source src="./audio/成功音.mp3" type="audio/mp3">
+        </audio>
+        <audio preload="auto" id="quiz">
+            <source src="./audio/クイズ出題時風な効果音.mp3" type="audio/mp3">
+        </audio>
+        <audio id="diceaudio">
+            <source src="./audio/サイコロ・テーブル上で転がす02.mp3" type="audio/mp3">
+        </audio>
+
+        <form name="form1" id="form1">
+            <input type="hidden" name="user_member" id="member" value="2">
+            <input type="hidden" name="turn_player" id="turn" value="0">
+            <table border="0" cellspacing="5" cellpadding="5" id="player">
+            </table>
+        </form>
+
+        <div id="menu">
+            <button class="map Map-overlay-event"><img src="./image/map_icon.png" ><p class="bottom">マップ</p></button>
+            <button id="diceBt"><img src="./image/dice1.png" alt="" ><p class="bottom" >サイコロをふる</p></button>
+            <button class="option Option-overlay-event"><img src="./image/option_icon.png"><p class="bottom">せってい</p></button>
+        </div>
+
+        <!--手番のプレイヤーの名前を表示-->
+        <div id="turnPlayer"></div>
+        <!--現在のターンを表示-->
+        <div id="turnView"></div>
+
+        <!--ダイスを表示-->
+        <div id="diceContent">
+            <img id="dice">
+            <img id="moveDice">
+            <div id="roledice">
+                <div class="dice">
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                    <div class="item"></div>
+                </div>
+            </div>
+        </div>
+
+        <!--スポットの説明を表示-->
+        <div id="overlay" style = "display: none;">
+            <div id="pt_content"></div>
+            <img id="explain_img">
+            <div id="explain"></div>
+        </div>
+
+        <!--イベント表示-->
+        <div id="event" style = "display: none;">
+            <div id="event_title"></div>
+            <div id="event_content"></div>
+            <div id="event_bt"></div>
+        </div>
+
+        <!--クイズの結果を表示-->
+        <div id="quiz_result" style = "display: none;">
+            <h1 id="quiz_result_title"></h1>
+            <div id="quiz_result_content"></div>
+        </div>
+                
+        <!--次に進むマスを表示-->
+        <div id="root"></div>
+
+        <!--ゲーム終了後のオーバーレイ-->
+        <div id="finish-overlay"></div>     
+
+
+        <canvas id="game"></canvas>
+        <!--Mapボタンで開くオーバーレイ-->
+        <div id="Map-overlay" class="Map-overlay-event">
+            <div class="flex">
+              <div id="Map-overlay-inner">
+             <img src="./image/Map_v08.png" alt="">
+             <button id="close-btn1" class="Map-overlay-event" type="button">とじる</button>
+              </div>
+            </div>
+        </div>
+
+        <div id="Option-overlay" class="Option-overlay-event">
+            <div class="flex">
+              <div id="Option-overlay-inner">
+                <h1>せってい</h1>
+                <button class="close-button-play" id="audio" >サウンドON</button>
+               <!-- <button class="close-button-mute" >サウンドOFF</button> -->  
+                <button class="rule">ルールをみる</button>
+                <button class="end End-overlay-event">ゲームをやめる</button>
+                <button id="close-btn2" class="Option-overlay-event" type="button">とじる</button>
+              </div>
+            </div>
+        </div>
+
+        <div id="End-overlay" class="End-overlay-event">
+            <div class="flex">
+              <div id="End-overlay-inner">
+                <p>ゲームをおわらせてだいじょうぶですか？</p>
+                <button class="restart End-overlay-event" id="close-btn">ゲームをやめない</button>
+                <button class="end true-end">ゲームをやめる</button>
+              </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="./javascript/sugoroku.js"></script>
+    </body>
+</html>

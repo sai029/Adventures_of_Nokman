@@ -1,0 +1,1946 @@
+@charset "UTF-8";
+/*全体のデザイン*/
+html,body{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+
+}
+
+body{
+  background-color: #05BEE6;
+  font-family: 'Meiryo UI','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;;
+}
+
+button{
+  cursor: pointer;
+}
+
+*{
+  /*font-family: 'Palette Mosaic', cursive;*/
+  /*font-family: 'Meiryo UI','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;;*/
+  letter-spacing: 0.2em;
+  font-weight: bold;
+}
+/*音楽再生注意*/
+
+.close-button-play{
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  color:#fff;
+  background-color: #96C864;
+  padding: 8px 16px;
+  font-size: 16px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  position: absolute;
+  width: 208px;
+  height: 48px;
+}
+
+.close-button-mute{
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  color:#fff;
+  background-color: #96C864;
+  padding: 8px 16px;
+  font-size: 16px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  position: absolute;
+  width: 208px;
+  height: 48px;
+}
+
+.modal {
+    display: block;
+    width: 309px;
+    height: 465px;
+    position: fixed;
+    z-index: 100;
+    left: 50%;
+    top: 50%;
+    border-radius: 28px;
+    transform: translate(-50%, -50%);
+    /* margin: -200px 0 0 -200px; */
+    background: white;
+    box-shadow: 0 0 60px 10px rgba(0, 0, 0, 0.9);
+    }
+.closed {
+      display: none;
+    }
+    
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    background: rgba(0, 0, 0, 0.6);
+    }
+.modal-guts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 309px;
+    height: 465px;
+    padding: 20px 50px 20px 20px;
+    }
+
+.open-button {
+    border: 0;
+    background: lightgreen;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 21px;
+    }
+.modal .close-button-play{
+      position: absolute;
+      top: 275px;
+      left: 18%;
+      border: 0;
+      color: white;
+      font-size: 1.3rem;
+      text-align: center;
+      }
+
+.modal .close-button-mute{
+        position: absolute;
+        top: 350px;
+        left: 18%;
+        border: 0;
+        color: white;
+        font-size: 1.3rem;
+        }
+h4{
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+}
+
+/*背景ぼかし*/
+
+.cover{
+  position: absolute;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  padding: 0;
+}
+
+.backdrop {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50% , -50%);
+	width: 100%;
+  height: 100%;
+	padding: 20px 0;
+	-webkit-backdrop-filter: blur(6px);
+	backdrop-filter: blur(6px);
+}
+
+/*----------スタート画面----------*/
+
+#syodo{
+    position: absolute;
+    width: 463px;
+    height: 328px;
+    /*left: -37px;*/
+    z-index: -2;
+    bottom: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+.game_title{
+    position: absolute;
+    width: 390px;
+    height: 298px;
+    /*left: -20px;*/
+    bottom: 319px;
+    /*padding: 0px;
+    margin: auto;*/
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.s-button1{
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    color:#fff;
+    background-color: #96C864;
+    padding: 8px 16px;
+    font-size: 16px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+    position: absolute;
+    width: 208px;
+    height: 48px;
+    /*left: 91px;*/
+    bottom: 179px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.s-button1:hover{
+    background: #00b822;
+}
+
+.s-button2{
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    color:#fff;
+    background-color: #96C864;
+    padding: 8px 16px;
+    font-size: 16px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+    position: absolute;
+    width: 208px;
+    height: 48px;
+    /*left: 91px;*/
+    bottom: 113px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.s-button2:hover{
+    background: #00b822;
+}
+
+.o-button{
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    color:#96C864;
+    background-color: #ffffff;
+    padding: 8px 16px;
+    font-size: 16px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+    position: absolute;
+    width: 208px;
+    height: 48px;
+    /*left: 91px;*/
+    bottom: 47px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.o-button:hover{
+    background: #c9c9c9;
+}
+ 
+#cloud_01{
+    position: absolute;
+    height: 305px;
+    width: 534px;
+    right: -399px;
+    top: 132px;
+    pointer-events: none;
+ }
+
+#cloud_02{
+    position: absolute;
+    height: 359px;
+    width: 628px;
+    right: -339px;
+    top: -209px;
+    pointer-events: none;
+}
+
+#cloud_03{
+    position: absolute;
+    height: 359px;
+    width: 628px;
+    right: -458px;
+    bottom: -179px;    
+    pointer-events: none;
+}
+
+#cloud_04{
+    position: absolute;
+    height: 359px;
+    width: 628px;
+    left: -388px;
+    bottom: -222px;
+    pointer-events: none;
+}
+
+#cloud_05{
+    position: absolute;
+    height: 586px;
+    width: 872px;
+    left: -730px;
+    top: 180px;
+    pointer-events: none;
+}
+
+#cloud_06{
+    position: absolute;
+    height: 359px;
+    width: 628px;
+    left: -513px;
+    top: -29px;
+    pointer-events: none;
+}
+
+.cloud_07{
+    position: absolute;
+    height: 128px;
+    width: 147px;
+    right: 62.31%;
+    bottom: 69.6%;
+    /*以下も追加*/
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+.cloud_08{
+    position: absolute;
+    height: 128px;
+    width: 147px;
+    left: 60%;
+    right: 2.31%;
+    top: 69.91%;
+    bottom: 14.93%;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .cloud_09{
+    position: absolute;
+    height: 128px;
+    width: 147px;
+    right: -12.69%;
+    bottom: -10.4%;
+    /*以下も追加*/
+    pointer-events: none;
+    z-index: 100;
+  }
+
+  .cloud_10{
+    position: absolute;
+    height: 128px;
+    width: 147px;
+    right: 71.31%;
+    bottom: 84.6%;
+    /*以下も追加*/
+    pointer-events: none;
+    z-index: 100;
+  }
+
+.slide{
+    position: absolute;
+    height: 136px;
+    width: 239px;
+    /*left: 52px;*/
+    bottom: 325px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/*オーバーレイ表示*/
+
+.flex{
+    width: 100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
+  #overlay1{
+    padding: 0px;
+    position: fixed;
+    top:0;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    visibility: hidden;
+    opacity: 0;
+    background: rgba(0,0,0,0.6);
+    transition: all 0.5s ease-out;
+  }
+  #overlay1.overlay-on{
+  visibility: visible;
+  opacity: 1;
+}
+  
+  #overlay-inner1{
+    width: 309px;
+    height: 465px;
+    left: calc(50% - 309px/2 - 0.5px);
+    top: calc(50% - 465px/2 - 0.5px);
+    background-color:#FFF;
+    text-align:center;
+    border-radius: 28px;
+    overflow-x: scroll;
+  }
+
+  #overlay-inner1 h1{
+    color: #000;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Meiryo UI','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 5.5px;
+  }
+
+  #overlay-inner1 p.center{
+    color: #000;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Meiryo UI','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 4.5px;
+  }
+
+  #overlay-inner1 p.rule{
+    text-align: justify;
+    color: #000;
+    font-size: 14px;
+    font-family: 'Meiryo UI','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 4.5px;
+    margin-left: 26px;
+  }
+
+  #overlay2{
+    position: fixed;
+    top:0;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    visibility: hidden;
+    opacity: 0;
+    background: rgba(0,0,0,0.6);
+    transition: all 0.5s ease-out;
+  }
+  #overlay2.overlay-on{
+  visibility: visible;
+  opacity: 1;
+}
+  
+  #overlay-inner2{
+    width: 309px;
+    height: 465px;
+    left: calc(50% - 309px/2 - 0.5px);
+    top: calc(50% - 465px/2 - 0.5px);
+    background-color:#FFF;
+    text-align:center;
+    border-radius: 28px;
+  } 
+
+  
+#close-btn1{
+  appearance: none;
+  border: 0;
+  border-radius: 16px;
+  color:#FA325A;
+  background-color: #ffffff;
+  padding: 8px 16px;
+  font-size: 16px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  position: absolute;
+  width: 142px;
+  height: 40px;
+  flex-shrink: 0; 
+  bottom: 73px;
+  left: 124px;
+  text-align: center;
+  font-family: 'Meiryo UI','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 8.5px;
+  cursor: pointer;
+}
+
+#close-btn2{
+  appearance: none;
+  border: 0;
+  border-radius: 16px;
+  color:#FA325A;
+  background-color: #ffffff;
+  padding: 8px 16px;
+  font-size: 16px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  position: absolute;
+  width: 142px;
+  height: 40px;
+  flex-shrink: 0; 
+  bottom: 73px;
+  left: 124px;
+  text-align: center;
+  font-family: 'Meiryo UI','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 8.5px;
+  cursor: pointer;
+}
+
+
+/*--------------------プレイヤー登録画面------------------*/
+
+h1.reg{
+  font-family: 'Meiryo UI','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 8.5px;
+    text-align: center;
+    color: #ffffff;
+    
+
+}
+
+.reg{
+    text-align: center;
+}
+
+#register #form1{
+    position: relative;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#form1 input{
+    font-size:16px;			/*フォントサイズ*/
+    color: #ffffff;
+    border: none;
+    padding:2px;			/*パディング*/
+	border-radius:3px;		/*角丸にする*/
+    background-color: rgba(255, 255, 255, 0);
+    width: 90%;
+    height: 48px;
+}
+
+#form1 input:focus{
+    box-shadow: 0px 0px 5px 2px #5c5c5c00;		/*影を付ける*/
+	outline-style:none;				/*アウトライン無しにする*/
+}
+
+#form1 table {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+#form1 input.delbtn{
+    font-size:30px;			/*フォントサイズ*/
+    color: #FA325A;
+    border: none ;
+    padding:2px;			/*パディング*/
+	border-radius:3px;		/*角丸にする*/
+    background-color: rgba(255, 255, 255, 0);
+    width: 20%;
+    height: 48px;
+}
+
+table#player{
+    width: 324px;
+}
+
+td{
+    display: flex;
+    border: 2px solid rgba(255, 255, 255, 1);
+    border-radius:3px;
+    padding:5px;			/*パディング*/
+    margin: 5px;
+    height: 48px;
+}
+.btn-circle {
+    border: 1px solid;
+    background-color: rgba(0, 0, 0, .0);
+    border-radius: 50%;
+    border-color: #ffffff;
+    color: #ffffff;
+    padding: 0;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    font-size: 150%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #top{
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    color:#96C864;
+    background-color: #ffffff;
+    padding: 8px 16px;
+    font-size: 16px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+    position: absolute;
+    width: 142px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    bottom: 50px;
+    left: 33px;
+  }
+
+  #next{
+    appearance: none;
+    border: 0;
+    color:#fff;
+    background-color: #96C864;
+    padding: 8px 16px;
+    font-size: 16px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+    position: absolute;
+    width: 142px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    bottom: 50px;
+    right: 33px;
+  }
+
+  .arrow_right {
+    position: relative;
+}
+.arrow_right::before {
+    position: absolute;
+    content: '';
+    width: 13px;
+    height:1.5px;
+    background-color:#ffffff;
+    top: 50%;
+    right: -1px;
+}
+.arrow_right::after {
+    position:absolute;
+    content:"";
+    border-top:1.5px solid #FFF;
+    border-right:1.5px solid #FFF;
+    top: 50%;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    margin-top: -5px;
+    transform: rotate(45deg);
+}
+
+.arrow_left {
+  position: relative;
+}
+.arrow_left::before {
+  position: absolute;
+  content: '';
+  width: 13px;
+  height:1.5px;
+  background-color:#96C864;
+  top: 50%;
+  left: -1px;
+}
+.arrow_left::after {
+  position:absolute;
+  content:"";
+  border-top:1.5px solid #96C864;
+  border-right:1.5px solid #96C864;
+  top: 50%;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  margin-top: -5px;
+  transform: rotate(-135deg);
+}
+
+/*----------ステージ選択----------*/
+
+/*スライダーのためのcss=*/
+
+.slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
+    width:90%;
+    bottom:-25% ;
+    left: 0%;
+  }
+  
+  .slider img {
+    width:60vw;/*スライダー内の画像を60vwにしてレスポンシブ化*/
+    height:auto;
+    width:337px;
+    text-align: center;
+    z-index: 5;
+  }
+
+  .slider .slick-slide {
+  transform: scale(0.8);/*左右の画像のサイズを80%に*/
+  transition: all .5s;/*拡大や透過のアニメーションを0.5秒で行う*/
+  opacity: 0.5;/*透過50%*/
+  }
+  
+  .slider .slick-slide.slick-center{
+  transform: scale(1);/*中央の画像のサイズだけ等倍に*/
+  opacity: 1;/*透過なし*/
+  }
+  
+  ul.slider .slick-initialized .slick-slider{
+    width: 100%;
+    background-color: rgba(0, 0, 0, .0);
+  }
+  /*矢印の設定*/
+  
+  /*戻る、次へ矢印の位置*/
+  .slick-prev, 
+  .slick-next {
+    position: absolute;/*絶対配置にする*/
+    top: 42%;
+    cursor: pointer;/*マウスカーソルを指マークに*/
+    outline: none;/*クリックをしたら出てくる枠線を消す*/
+    border-top: 2px solid #666;/*矢印の色*/
+    border-right: 2px solid #666;/*矢印の色*/
+    height: 15px;
+    width: 15px;
+    background-color:rgba(255, 255, 255, 0);
+  }
+  
+  .slick-prev {/*戻る矢印の位置と形状*/
+    left: 5%;
+    transform: rotate(-135deg);
+  }
+  
+  .slick-next {/*次へ矢印の位置と形状*/
+    right: -6.5%;
+    transform: rotate(45deg);
+  }
+  
+  ul li button{
+    position: relative;
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    width: 337px;
+    height: 237px;
+    overflow: hidden;
+  }
+
+  li p.yomi{
+    color: var(--unnamed, #FFF);
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Meiryo UI','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 8.5px;
+    margin: 0;
+  }
+
+  li p.kanzi{
+    color: var(--unnamed, #FFF);
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Meiryo UI','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 8.5px;
+    margin: 0;
+  }
+  
+  #back{
+    appearance: none;
+    border: 0;
+    border-radius: 5px;
+    color:#96C864;
+    background-color: #ffffff;
+    padding: 8px 16px;
+    font-size: 16px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+    position: absolute;
+    width: 142px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    bottom: 50px;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+/*---------------スタート選択----------*/
+.g-button{
+  appearance: none;
+  border: 0;
+  color:#fff;
+  background-color: #96C864;
+  padding: 8px 16px;
+  font-size: 16px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  position: absolute;
+  width: 142px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 16px;
+}
+
+#start_select .btn{
+  position: absolute;
+  width: 463px;
+  height: 390px;
+  background-color: #00000000;
+  bottom: 20%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+#tonosyo{
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+
+#sakate{
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+}
+
+#ikeda{
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+}
+#start_select rt{
+  color: var(--unnamed, #FFF);
+  text-align: center;
+  font-family: 'Meiryo UI','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 8.5px;
+  width: 100%;
+  height: 100%;
+}
+
+#start_select ruby{
+  position: absolute;
+  color: var(--unnamed, #FFF);
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 8.5px;
+  width: 100%;
+  height: 100%;
+  top: 15%;
+  left: 54%;
+  transform: translate(-50%);
+}
+
+.line{
+  height: 2px;
+  background-color: #ffffff;
+}
+#t-line {
+  position: absolute;
+  width: 100px;
+  top: 33%;
+  left: 16%;
+  transform: rotate(-102.37deg);
+}
+
+#s-line {
+  position: absolute;
+  width: 79px;
+  bottom: 30%;
+  right: 19%;
+  transform: rotate(-103.43deg);
+}
+
+#i-line {
+  position: absolute;
+  width: 161px;
+  bottom: 32%;
+  left: 16%;
+  transform: rotate(-62.59deg);
+}
+
+#start_select #back{
+  left: 50%;
+  transform: translate(-50%);
+}
+
+#start_select #title{
+  position: absolute;
+  width: 100%;
+  height: 30%;
+}
+
+#start_select #title #player_name{
+  color: #ffffff;
+  position: absolute;
+  left: 50%;
+  top: 25%;
+  transform: translate(-50%);
+  font-size: 2rem;
+}
+
+#start_select #title #start_text{
+  color: #ffffff;
+  position: absolute;
+  width: 380px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 1.5rem;
+}
+
+
+/*---------------------すごろく---------------------*/
+#sugoroku {
+  visibility: hidden;
+}
+
+#sugoroku table{
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+#sugoroku td{
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+#sugoroku #player_point{
+    padding: 10px;
+    z-index: 10;
+
+}
+
+#sugoroku #menu{
+  width: 100%;
+  max-width: 428px;
+  height: 20%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 10;
+  bottom: 15px;
+  margin: auto;
+  text-align: center;
+}
+
+
+#game {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    /*opacity: 0.5;*/
+}
+
+body#sugoroku div#menu button.map{
+  width: 73px;
+  height: 53px;
+  flex-shrink: 0;
+  border: 3px solid var(--unnamed, #05BEE6);
+  background: rgba(150, 220, 250, 0.70);
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  bottom: 0px;
+  left: 30px;
+}
+
+body#sugoroku div#menu button.map p.bottom{
+  position: absolute;
+  bottom: -7px;
+  left: 15px;
+  color: #FFF;
+  font-family: 'Meiryo UI','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;;
+  font-size: 12px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 2.5px;
+}
+
+body#sugoroku div#menu button.map img{
+  position: absolute;
+  bottom: 33.21px;
+  left: 15px;
+}
+
+body#sugoroku div#menu button.option{
+  width: 73px;
+  height: 53px;
+  flex-shrink: 0;
+  border: 3px solid var(--unnamed, #05BEE6);
+  background: rgba(150, 220, 250, 0.70);
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  bottom: 0px;
+  right: 30px;
+}
+
+body#sugoroku div#menu button.option p.bottom{
+  position: absolute;
+  bottom: -7px;
+  left: 7px;
+  color: #FFF;
+  font-family: 'Meiryo UI','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;;
+  font-size: 12px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 2.5px;
+}
+
+body#sugoroku div#menu button.option img{
+  position: absolute;
+  bottom: 33.21px;
+  left: 10px;
+}
+
+body#sugoroku div#menu button#diceBt{
+  width: 129px;
+  height: 129px;
+  flex-shrink: 0;
+  border-radius: 129px;
+  border: 3px solid var(--unnamed, #05BEE6);
+  background: rgba(150, 220, 250, 0.798);
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(7px);
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+body#sugoroku div#menu button#diceBt p.bottom{
+  position: relative;
+  bottom: -30px;
+  left: 50%;
+  transform: translate(-50%);
+  color: #FFF;
+  font-family: 'Meiryo UI','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;;
+  font-size: 12px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+body#sugoroku div#menu button#diceBt img{
+  position: absolute;
+  width: 56px;
+  bottom: 50px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+#sugoroku form{
+  top: 2%;
+  width: 33%;
+  right: 0%;
+  pointer-events: none;
+}
+
+#sugoroku td{
+  position: relative;
+  width: 204px;
+  border-radius: 5px;
+  border: 2px solid var(--unnamed, #05BEE6);
+  background: rgba(150, 220, 250, 0.798);
+  backdrop-filter: blur(2px);
+  width: 158px;
+  height: 16px;
+  flex-shrink: 0;
+  margin: 5px;
+}
+
+#sugoroku td input{
+  position: absolute;
+  top: -110%;
+  left: 8%;
+  text-align: right;
+  padding: 5px;
+}
+
+#sugoroku #form1{
+  position: relative;
+  left: 55%;
+}
+/*
+#sugoroku #root{
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  transform: translate(-50%);
+}
+*/
+#sugoroku #root{
+  width: 100%;
+  height: 100%;
+}
+
+
+#sugoroku .player_point{
+  color: #FFF;
+  text-align: center;
+  font-size: 26px;
+  font-family: 'Meiryo UI','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 4.5px;
+  position: absolute;
+  top: -55%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+#sugoroku td .pt{
+  position: absolute;
+  top: -35%;
+  right: 0%;
+  color: #ffffff;
+}
+
+#sugoroku #overlay #pt_content{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 5%;
+}
+
+#sugoroku #overlay #point{
+  color: #F0D21E;
+  font-family: 'Meiryo UI','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;;
+
+}
+
+#sugoroku #overlay #pt{
+  color: #ffffff;
+  font-family: 'Meiryo UI','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;;
+
+  font-size: 20px;
+}
+
+#sugoroku #overlay #get{
+  color: #ffffff;
+  font-family: 'Meiryo UI','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;;
+  padding: 15px;
+}
+
+#sugoroku #overlay{
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.64);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#sugoroku #overlay #explain{
+  position: absolute;
+  background-color: #ffffff;
+  width: 85%;
+  height: 55%;
+  max-width: 360px;
+  max-height: 480px;
+  left: 50%;
+  transform: translate(-50%);
+  top: 20%;
+  text-align:center;
+  border-radius: 28px;
+  z-index: 101;
+  font-family: 'Meiryo UI','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#sugoroku #overlay #explain_img{
+  position: absolute;
+  top: -5%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 100%;
+  height: auto;
+}
+
+#sugoroku #overlay .close{
+  appearance: none;
+  border: 0;
+  border-radius: 16px;
+  color:#FA325A;
+  background-color: #ffffff;
+  padding: 8px 16px;
+  font-size: 16px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  position: absolute;
+  width: 142px;
+  height: 40px;
+  flex-shrink: 0; 
+  bottom: 15%;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+  font-family: 'Meiryo UI','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 8.5px;
+  cursor: pointer;
+  z-index: 110;
+}
+
+#sugoroku #event .close{
+  appearance: none;
+  border: 0;
+  border-radius: 16px;
+  color:#FA325A;
+  background-color: #ffffff;
+  padding: 8px 16px;
+  font-size: 16px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  position: absolute;
+  width: 142px;
+  height: 40px;
+  flex-shrink: 0; 
+  bottom: 25%;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+  font-family: 'Meiryo UI','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 8.5px;
+  cursor: pointer;
+  z-index: 110;
+}
+
+#sugoroku #event{
+    width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.64);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#sugoroku #event_title{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 35%;
+  z-index: 100;
+  font-size: 36px;
+  color: #fa325a;
+  width: 100%;
+}
+
+#sugoroku #event_content{
+    position: absolute;
+    background-color: #ffffff;
+    width: 75%;
+    height: 10%;
+    max-width: 360px;
+    max-height: 480px;
+    left: 50%;
+    transform: translate(-50%);
+    top: 50%;
+    text-align: center;
+    border-radius: 28px;
+    padding: 20px;
+    z-index: 101;
+    font-family: 'Meiryo UI','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+#sugoroku #overlay #explain #ex_content{
+  padding: 10px;
+  position: absolute;
+  top: 57%;
+  width: 90%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+#sugoroku #event #event_bt{
+  width: 90%;
+  height: 10%;
+  max-width: 360px;
+  max-height: 480px;
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  transform: translate(-50%);
+}
+#sugoroku #event #quiz1{
+  appearance: none;
+  border: 0;
+  color:#fff;
+  background-color: #96C864;
+  padding: 8px 16px;
+  font-size: 16px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  /*
+  position: absolute;*/
+  width: 142px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  /*
+  bottom: 0%;
+  left: 5%;
+  */
+  margin: 1rem;
+}
+
+#sugoroku #event #quiz2{
+  appearance: none;
+  border: 0;
+  color:#fff;
+  background-color: #96C864;
+  padding: 8px 16px;
+  font-size: 16px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  /*
+  position: absolute;*/
+  width: 142px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  
+  /*
+  bottom: 0%;
+  right: 5%;
+  */
+  margin: 1rem;
+}
+
+#sugoroku #turnPlayer{
+  /*font-family: 'Palette Mosaic', cursive;*/
+  /*font-family: 'Cherry Bomb One', cursive;*/
+  font-family: 'Monomaniac One', sans-serif;
+  font-weight:normal;
+  position: absolute;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 30px;
+  color: #ffffff;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 100%;
+  height: 100%;
+  z-index: 105;
+  background-color: rgba(0, 0, 0, 0.568);
+}
+
+#sugoroku #turnPlayerView{
+  position: absolute;
+  width: 100%;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+#sugoroku #turnPlayerView2{
+  position: absolute;
+  width: 100%;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+#sugoroku #turnView{
+  display: none;
+  position: absolute;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 2.0rem;
+  color: #ffffff;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 100%;
+  height: 100%;
+  z-index: 105;
+  background-color: rgba(0, 0, 0, 0.568);
+}
+
+#sugoroku #turnViewChild{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 33%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+#sugoroku #Map-overlay{
+  padding: 0px;
+  position: fixed;
+  top:0;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+  opacity: 0;
+  background: rgba(0,0,0,0.6);
+  transition: all 0.5s ease-out;
+}
+
+#sugoroku #Map-overlay.overlay-on{
+visibility: visible;
+opacity: 1;
+}
+
+#sugoroku #Map-overlay-inner{
+  width: 85%;
+  height: 65%;
+  left: calc(50% - 309px/2 - 0.5px);
+  top: calc(50% - 465px/2 - 0.5px);
+  background-color:#FFF;
+  text-align:center;
+  border-radius: 28px;
+  overflow-x: scroll;
+  overflow-y: scroll;
+}
+
+#sugoroku #Map-overlay #close-btn1{
+  appearance: none;
+  border: 0;
+  border-radius: 16px;
+  color:#FA325A;
+  background-color: #ffffff;
+  padding: 8px 16px;
+  font-size: 16px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  position: absolute;
+  width: 142px;
+  height: 40px;
+  flex-shrink: 0; 
+  bottom: 60px;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+  font-family: 'Meiryo UI','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 8.5px;
+  cursor: pointer;
+  z-index: 110;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#sugoroku #Option-overlay{
+  padding: 0px;
+  position: fixed;
+  top:0;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+  opacity: 0;
+  background: rgba(0,0,0,0.6);
+  transition: all 0.5s ease-out;
+}
+
+#sugoroku #Option-overlay.overlay-on{
+  visibility: visible;
+  opacity: 1;
+}
+
+#sugoroku #Option-overlay-inner{
+  width: 85%;
+  height: 55%;
+  max-width: 309px;
+  max-height: 465px;
+  left: calc(50% - 309px/2 - 0.5px);
+  top: calc(50% - 465px/2 - 0.5px);
+  background-color:#FFF;
+  text-align:center;
+  border-radius: 28px;
+  position: absolute;
+}
+
+#sugoroku #Option-overlay-inner .rule{
+  width: 208px;
+  height: 48px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 16px;
+  background: var(--unnamed, #96C864);
+  color: #ffffff;
+  position: absolute;
+  bottom: 124px;
+  left: 50%;
+  transform: translate(-50%);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#sugoroku #Option-overlay-inner .end{
+  width: 208px;
+  height: 48px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 16px;
+  background: var(--unnamed, #FA325A);
+  color: #ffffff;
+  position: absolute;
+  bottom: 55px;
+  left: 50%;
+  transform: translate(-50%);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#sugoroku #Option-overlay #close-btn2{
+  appearance: none;
+  border: 0;
+  border-radius: 16px;
+  color:#FA325A;
+  background-color: #ffffff;
+  padding: 8px 16px;
+  font-size: 16px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  position: absolute;
+  width: 142px;
+  height: 40px;
+  flex-shrink: 0; 
+  bottom: -77px;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+  font-family: 'Meiryo UI','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 8.5px;
+  cursor: pointer;
+  z-index: 110;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+
+#sugoroku #End-overlay{
+  padding: 0px;
+  position: fixed;
+  top:0;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+  opacity: 0;
+  background: rgba(0,0,0,0.6);
+  transition: all 0.5s ease-out;
+}
+#sugoroku #End-overlay.overlay-on{
+  visibility: visible;
+  opacity: 1;
+}
+
+#sugoroku #End-overlay-inner{
+  width: 85%;
+  height: 55%;
+  max-width: 309px;
+  max-height: 465px;
+  left: calc(50% - 309px/2 - 0.5px);
+  top: calc(50% - 465px/2 - 0.5px);
+  background-color:#FFF;
+  text-align:center;
+  border-radius: 28px;
+  position: absolute;
+}
+
+#sugoroku #End-overlay-inner .restart{
+  width: 208px;
+  height: 48px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 16px;
+  background: var(--unnamed, #ffffff);
+  color: #000000;
+  position: absolute;
+  bottom: 124px;
+  left: 50%;
+  transform: translate(-50%);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#sugoroku #End-overlay-inner .end{
+  width: 208px;
+  height: 48px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 16px;
+  background: var(--unnamed, #FA325A);
+  color: #ffffff;
+  position: absolute;
+  bottom: 55px;
+  left: 50%;
+  transform: translate(-50%);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#sugoroku #Option-overlay-inner .close-button-play{
+  position: absolute;
+  bottom: 70%;
+  left: 50%;
+  transform: translate(-50%);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#sugoroku #Option-overlay-inner .close-button-mute{
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#sugoroku #diceContent{
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
+  z-index: 8;
+  pointer-events: none;
+}
+
+#sugoroku #moveDice{
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+#dice{
+  position: absolute;
+  width: 120px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+
+}
+
+#sugoroku #diceContent #roledice{
+  width: 230px;
+  height: 230px;
+  display: none;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+
+#sugoroku #diceContent #roledice .dice {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  transform-style: preserve-3d;
+  animation: rotate-animation 0.5s linear infinite;
+  top: 25%;
+  left: 25%;
+}
+#sugoroku #diceContent #roledice .dice .item {
+  position: absolute;
+  left: 0;
+  right: 0;
+  border: 1px solid #333;
+  width: 100%;
+  height: 100%;
+}
+/* 1 */
+#sugoroku #diceContent #roledice .dice .item:nth-child(1) {
+  transform: translate3d(0, -50px, 0) rotateX(-90deg);
+  background: url(../image/dice1.png) no-repeat
+  center center / 100% 100%;
+}
+/* 2 */
+#sugoroku #diceContent #roledice .dice .item:nth-child(2) {
+  transform: translate3d(0, 0, 50px);
+  background: url(../image/dice2.png) no-repeat
+  center center / 100% 100%;
+}
+/* 3 */
+#sugoroku #diceContent #roledice .dice .item:nth-child(3) {
+  transform: translate3d(50px, 0, 0) rotateY(90deg);
+  background: url(../image/dice3.png) no-repeat
+  center center / 100% 100%;
+}
+/* 4 */
+#sugoroku #diceContent #roledice .dice .item:nth-child(4) {
+  transform: translate3d(-50px, 0, 0) rotateY(-90deg);
+  background: url(../image/dice4.png) no-repeat
+  center center / 100% 100%;
+}
+/* 5 */
+#sugoroku #diceContent #roledice .dice .item:nth-child(5) {
+  transform: translate3d(0, 0, -50px) rotateY(180deg);
+  background: url(../image/dice5.png) no-repeat
+  center center / 100% 100%;
+}
+/* 6 */
+#sugoroku #diceContent #roledice .dice .item:nth-child(6) {
+  transform: translate3d(0, 50px, 0) rotateX(-90deg);
+  background: url(../image/dice6.png) no-repeat
+  center center / 100% 100%;
+}
+@keyframes rotate-animation {
+  from {
+    transform: rotate3d(1, 1, 1, 0deg);
+  }
+  25% {
+    transform: rotate3d(1, 1, 1, 90deg);
+  }
+  50% {
+    transform: rotate3d(1, 1, 1, 180deg);
+  }
+  75% {
+    transform: rotate3d(1, 1, 1, 270deg);
+  }
+  to {
+    transform: rotate3d(1, 1, 1, 360deg);
+  }
+}
+
+#sugoroku #quiz_result{
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.64);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#sugoroku #quiz_result #quiz_result_title{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 35%;
+  z-index: 100;
+  font-size: 36px;
+  color: #ffffff;
+  width: 100%;
+}
+#sugoroku #quiz_result #quiz_result_content {
+  position: absolute;
+  background-color: #ffffff;
+  width: 75%;
+  height: 10%;
+  max-width: 360px;
+  max-height: 480px;
+  left: 50%;
+  transform: translate(-50%);
+  top: 50%;
+  text-align: center;
+  border-radius: 28px;
+  padding: 20px;
+  z-index: 101;
+  font-family: 'Meiryo UI','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+#sugoroku #quiz_result .close{
+  appearance: none;
+  border: 0;
+  border-radius: 16px;
+  color:#FA325A;
+  background-color: #ffffff;
+  padding: 8px 16px;
+  font-size: 16px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+  position: absolute;
+  width: 142px;
+  height: 40px;
+  flex-shrink: 0; 
+  bottom: 25%;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+  font-family: 'Meiryo UI','Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3',  Meiryo, メイリオ, Osaka, 'MS PGothic', arial, helvetica, sans-serif;;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 8.5px;
+  cursor: pointer;
+  z-index: 110;
+}
+
+
+
+/*---------------フィニッシュ画面----------*/
+#finish .share-and-back{
+  width: 100%;
+  height: 30%;
+  position: absolute;
+  bottom: 0%;
+}
+
+#finish button.share{
+  width: 313px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  background: #05BEE6;
+  position: absolute;
+  bottom: 55%;
+  border: none;
+  left: 50%;
+  transform: translate(-50%);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  color: #ffffff;
+}
+
+#finish button.share svg{
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#finish button.share p.share{
+  color: #ffffff;
+  width: 100%;
+  position: absolute;
+  left: 60%;
+  transform: translateX(-50%);
+  TOP: -15%;
+  color: var(--unnamed, #FFF);
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 8.5px;
+}
+
+
+#finish button.TOP{
+  width: 313px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  background: var(--unnamed, #96C864);
+  position: absolute;
+  bottom: 25%;
+  border: none;
+  left: 50%;
+  transform: translate(-50%);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  color: #ffffff;
+}
+
+#finish button.TOP p.TOP{
+  color: #ffffff;
+  width: 100%;
+  position: absolute;
+  left: 60%;
+  transform: translate(-50%);
+  top: -15%;
+  color: var(--unnamed, #FFF);
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 8.5px;
+}
+
+#finish button.TOP img{
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#finish h1{
+  text-align: center;
+  color: #ffffff;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#finish .btn_back{
+  width: 100%;
+  max-width: 450px;
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+#finish #winner{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+#finish #player_name{
+  font-size: 3rem;
+  color: #fff;
+  margin: 5%;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#finish #point{
+  font-size: 3rem;
+  color: #fff;
+  margin: 5%;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+#finish #img{
+  flex-shrink: 0;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
